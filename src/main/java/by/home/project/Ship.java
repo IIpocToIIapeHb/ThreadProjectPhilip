@@ -18,10 +18,6 @@ public class Ship implements Runnable{
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public boolean isLoaded() {
         return loaded;
     }
@@ -32,6 +28,8 @@ public class Ship implements Runnable{
 
     @Override
     public void run() {
+        Port port = Port.getInstance();
+        port.process(this);
 
     }
 
